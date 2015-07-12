@@ -19,7 +19,7 @@ templates. 'entry.twig' is much more straightforward.
 
     {% for key,value in record.values %}
 
-        {%  if key not in ['id', 'slug', 'datecreated', 'datechanged', 'datepublish', 'username', 'status', 'title', 'subtitle'] %}
+        {%  if key not in ['id', 'slug', 'datecreated', 'datechanged', 'datepublish', 'datedepublish', 'username', 'status', 'title', 'subtitle'] %}
 
             {% if record.fieldtype(key) == "image" and value != "" %}
 
@@ -90,8 +90,9 @@ templates. 'entry.twig' is much more straightforward.
         {% endif %}
     </p>
 
-    {# Just print out the entire record. For reference and stuff #}
+    {# Uncomment this if you wish to dump the entire record to the client, for debugging purposes.
     {{ print(record) }}
+    #}
 
 </article>
 
